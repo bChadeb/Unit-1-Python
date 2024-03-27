@@ -55,3 +55,20 @@ def search_title(books, title):
             return book
         return None
     
+def search_through_rating(books, rating):
+    rated_books = []
+
+    for book in books:
+        if book["rating"] == rating:
+            rated_books.append(book)
+    return rated_books      
+
+def add_book(books, title, author, rating):
+    new_book = {
+        "title": title,
+        "author": author,
+        "rating": rating
+    } 
+
+    books.append(new_book)
+    return "Book has been added"
