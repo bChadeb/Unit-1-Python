@@ -80,24 +80,23 @@ def create_book():
 
     return dict
 
-book = create_book
-print(book)
-
-
-
 
 ### Step 4 - if/elif/else
 
 ## Now create a main menu function that gives the user options. Handle their choices with if/elif/else statements.
 
-def menu(book):
+def menu(library):
     choice = input("Hit 1 to add a new book. Hit 2 to see all of the books. Hit 3 to exit")
+
     if choice == "1":
-        book.append(create_book())
+        library.append(create_book())
     elif choice == "2":
-        print(book)
+        for book in library:
+            print(book)
     elif choice == "3":
-        print("\nPlease hit a number from the options")
+        return False
+    
+    return True
 
 ### Step 5 - while loops
 
@@ -105,7 +104,8 @@ def menu(book):
 
 # Code here
 
+library = []
 start = True
 
 while start:
-    start = menu(start)
+    start = menu(library)
